@@ -59,8 +59,6 @@ __initialize_hardware(void)
   // to be executed before the call of any HAL function.
   HAL_Init();
 
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-
   // Enable HSE Oscillator and activate PLL with HSE as source
   SystemClock_Config();
 

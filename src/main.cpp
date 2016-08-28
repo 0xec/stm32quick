@@ -16,11 +16,11 @@
 int main() {
 	__initialize_hardware();
 
-	std::shared_ptr<stm32::GPIO> ptr = std::make_shared<stm32::GPIO>(GPIOA, GPIO_PIN_5);
-
+	auto pin = stm32::GPIO::Create(GPIOA, GPIO_PIN_5);
+	pin->set(GPIO_PIN_SET);
 
 	while (1) {
-		ptr->toggle();
+		pin->set(GPIO_PIN_SET);
 		HAL_Delay(1000);
 		printf("loop\n");
 	}
